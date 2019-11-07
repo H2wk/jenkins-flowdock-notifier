@@ -105,10 +105,8 @@ def call(script, type, flowToken, tags = '') {
         // Post is going into flow as a chat message
         def content = """${subject}
             Result: ${buildStatus}
-            Build: ${script.currentBuild.displayName}
-            URL: ${script.env.BUILD_URL}
-            Author: ${authorName}
-            Commit: ${script.env.GIT_COMMIT}"""
+            Commit: ${script.env.GIT_COMMIT}
+            URL: ${script.env.BUILD_URL}"""
 
         // build payload
         payload = JsonOutput.toJson([
